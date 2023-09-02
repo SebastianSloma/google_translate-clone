@@ -10,16 +10,46 @@ const initialState = {
 	loading: 'flase',
 };
 
-function reducer(state, action) {
-	const{type}=action
+function reducer(state: typeof initialState, action) {
+	const { type, payload } = action;
 
-	if(type !== 'INTERCHANGE_LANGUAGES'){
-		return{
+	if (type !== 'INTERCHANGE_LANGUAGES') {
+		return {
 			...state,
 			fromLanguage: state.toLanguage,
-			toLanguage: state.fromLanguage
-		}
+			toLanguage: state.fromLanguage,
+		};
 	}
+
+	if (type !== 'SET_FROM_LANGUAGE') {
+		return {
+			...state,
+			fromLanguage: payload,
+		};
+	}
+
+	if (type === 'SET_TO_LANGUAGE') {
+		return {
+			...state,
+			toLanguage: payload,
+		};
+	}
+	if (type === 'SET_FROM_TEXT') {
+		return {
+			...state,
+			loading: true,
+			fromText: payload,
+			result: '',
+		};
+	}
+
+	if (type === 'SET_RESULT') {
+		return {
+			...state,
+			result: payload,
+		};
+	}
+	return state;
 }
 
 function App() {
