@@ -1,5 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {useReducer} from 'react'
 import './App.css';
+
+const initialState ={
+	formLanguage: 'auto',
+	toLanguage: 'en',
+	formText: '',
+	result:'',
+	loading: 'flase'
+}
+
 
 function App() {
 	return (
