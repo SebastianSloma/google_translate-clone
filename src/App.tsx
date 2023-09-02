@@ -1,8 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useReducer } from 'react';
 import './App.css';
+import { type State } from './types.d';
 
-const initialState = {
+const initialState: State = {
 	formLanguage: 'auto',
 	toLanguage: 'en',
 	formText: '',
@@ -10,7 +11,7 @@ const initialState = {
 	loading: 'flase',
 };
 
-function reducer(state: typeof initialState, action) {
+function reducer(state: State, action: Action) {
 	const { type, payload } = action;
 
 	if (type !== 'INTERCHANGE_LANGUAGES') {
