@@ -59,6 +59,13 @@ function App() {
 	return (
 		<div className='App'>
 			<h1>Google Translate *</h1>
+			<button
+				onClick={() => {
+					dispatch({ type: 'S' });
+				}}
+			>
+				Cambiar a Espanol
+			</button>
 		</div>
 	);
 }
