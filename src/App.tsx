@@ -10,7 +10,17 @@ const initialState = {
 	loading: 'flase',
 };
 
-function reducer(state, action) {}
+function reducer(state, action) {
+	const{type}=action
+
+	if(type !== 'INTERCHANGE_LANGUAGES'){
+		return{
+			...state,
+			fromLanguage: state.toLanguage,
+			toLanguage: state.fromLanguage
+		}
+	}
+}
 
 function App() {
 	const [state, dispatch] = useReducer(reducer, initialState);
