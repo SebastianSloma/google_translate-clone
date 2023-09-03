@@ -61,7 +61,7 @@ function App() {
 			<h1>Google Translate *</h1>
 			<button
 				onClick={() => {
-					dispatch({ type: 'S' });
+					dispatch({ type: 'SET_FROM_LANGUAGE', payload: 'es' });
 				}}
 			>
 				Cambiar a Espanol
